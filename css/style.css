@@ -30,7 +30,7 @@ body {
   position: relative;
 }
 
-.silde {
+.slide {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -42,11 +42,11 @@ body {
   display: none;
 }
 
-.silde.active {
+.slide.active {
   display: block;
 }
 
-.silde img {
+.slide img {
   width: 100%;
   height: 100%;
 }
@@ -70,6 +70,10 @@ body {
   text-shadow: 2px 2px 2px #080808;
 }
 
+.title p {
+  animation: fade 2s ease-in;
+}
+
 .btn {
   display: block;
   text-decoration: none;
@@ -82,6 +86,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  animation: fade 2.5s ease-in-out;
 }
 
 .btn:hover {
@@ -98,7 +103,7 @@ body {
   left: 0;
   z-index: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
 }
@@ -114,9 +119,11 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  font-size: 0.8rem;
+  line-height: 1.6;
 }
 
-.slide-status .status:hover {
+.slide-status .status:hover, .slide-status .status.active {
   background-color: #44bd32;
   color: #fff;
 }
@@ -150,10 +157,20 @@ body {
 }
 
 .controle i:nth-child(2) {
-  border-radius: 5px 0 0 5px;
+  border-radius: 50% 0 0 50%;
 }
 
 .controle i:hover {
   background-color: #44bd32;
+}
+
+@keyframes fade {
+  0%,
+  45% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=style.css.map */

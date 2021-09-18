@@ -6,7 +6,7 @@
     position: relative;
 }
 
-.silde {
+.slide {
     @include flex(flex, center, center, row-reverse);
     @include size(100%, 100%);
     position: relative;
@@ -33,6 +33,9 @@
     line-height: 1.9;
     font-size: 1rem;
     text-shadow: 2px 2px 2px rgb(8, 8, 8);
+    p {
+        animation: fade 2s ease-in;
+    }
 }
 
 .btn {
@@ -46,6 +49,7 @@
     @include border-radius(5px);
     cursor: pointer;
     transition: background 0.3s ease-in-out;
+    animation: fade 2.5s ease-in-out;
     &:hover {
         background-color: rgba($color: map-get($map: $color, $key: five), $alpha: 1);
         color: rgba($color: map-get($map: $color, $key: two), $alpha: 0.8);
@@ -59,7 +63,7 @@
     bottom: 0;
     left: 0;
     z-index: 1;
-    @include flex(flex, center, center);
+    @include flex(flex, center, center, row-reverse);
     .status {
         display: block;
         @include size(20px, 20px);
@@ -70,7 +74,10 @@
         @include border-radius(50%);
         cursor: pointer;
         transition: background 0.3s ease-in-out;
-        &:hover {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        &:hover,
+        &.active {
             background-color: map-get($map: $color, $key: five);
             color: #fff;
         }
@@ -96,10 +103,20 @@
             @include border-radius(0 50% 50% 0);
         }
         &:nth-child(2) {
-            @include border-radius(5px 0 0 5px);
+            @include border-radius(50% 0 0 50%);
         }
         &:hover {
             background-color: map-get($map: $color, $key: five);
         }
+    }
+}
+
+@keyframes fade {
+    0%,
+    45% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
