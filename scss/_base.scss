@@ -1,5 +1,17 @@
+@import "mixin";
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+body {
+    @include flex(flex, center, center, row);
+}
+
+.container {
+    @include size(85%, 80vh);
+    background-color: map-get($map: $color, $key: one);
+    margin-top: 20px;
+    @include border(4px solid map-get($map: $color, $key: one));
 }

@@ -1,5 +1,5 @@
-@mixin flex($justify, $align: center, $dir: row) {
-    display: flex;
+@mixin flex($dis, $justify, $align: center, $dir: row) {
+    display: $dis;
     flex-direction: $dir;
     justify-content: $justify;
     align-items: $align;
@@ -12,6 +12,10 @@
 
 @mixin border($params...) {
     border: $params;
+}
+
+@mixin border-radius($params...) {
+    border-radius: $params;
 }
 
 @mixin box-shadow($params...) {
