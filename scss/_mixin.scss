@@ -1,0 +1,21 @@
+@mixin flex($justify, $align: center, $dir: row) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin border($params...) {
+    border: $params;
+}
+
+@mixin box-shadow($params...) {
+    box-shadow: $params;
+}
+
+$color: ( one: #2f3640, two: #f5f6fa, three: #c23616, four: #0097e6, five: #44bd32, six: #fbc531, );
