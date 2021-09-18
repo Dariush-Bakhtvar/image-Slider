@@ -31,7 +31,7 @@
     text-align: right;
     padding: 10px 5px;
     line-height: 1.9;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-shadow: 2px 2px 2px rgb(8, 8, 8);
 }
 
@@ -40,15 +40,16 @@
     text-decoration: none;
     @include size(120px, 40px);
     text-align: center;
-    border: 2px solid rgba($color: map-get($map: $color, $key: five), $alpha: 1);
     color: rgba($color: map-get($map: $color, $key: two), $alpha: 0.9);
+    border: 2px solid rgba($color: map-get($map: $color, $key: two), $alpha: 1);
     line-height: 2.2;
     @include border-radius(5px);
     cursor: pointer;
-    transition: background 1s ease-in-out;
+    transition: background 0.3s ease-in-out;
     &:hover {
         background-color: rgba($color: map-get($map: $color, $key: five), $alpha: 1);
         color: rgba($color: map-get($map: $color, $key: two), $alpha: 0.8);
+        border: 2px solid rgba($color: map-get($map: $color, $key: five), $alpha: 1);
     }
 }
 
