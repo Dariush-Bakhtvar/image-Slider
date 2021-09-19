@@ -4,7 +4,6 @@ const slideNumber = document.getElementsByClassName('status');
 const next = ctrl[0];
 const prev = ctrl[1];
 let counter = 0;
-let selectedId;
 //frist display none all slider
 function displayNone() {
     for (let i = 0; i < slide.length; i++) {
@@ -70,4 +69,4 @@ setInterval(() => {
     deactive();
     slide[counter].style.display = 'block';
     slideNumber[counter].classList.add('active');
-}, 3000);
+}, 8000);
